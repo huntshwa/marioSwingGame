@@ -84,11 +84,15 @@ public class DisplayPanel extends JPanel implements MouseListener, KeyListener {
             if (e.getX() <= 0){
                 marioX = 0;
             } else if (e.getX() >= 900) {
-                marioX = 896;
+                marioX = 900;
             } else {
                 marioX = e.getX();
             }
-            if (e.getY() > 0 && e.getY() < 435) {
+            if (e.getY() <= 0) {
+                marioY = 0;
+            } else if (e.getY() >= 435) {
+                marioY = 435;
+            } else {
                 marioY = e.getY();
             }
             repaint();
